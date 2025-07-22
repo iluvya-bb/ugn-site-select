@@ -29,21 +29,23 @@ export default function App() {
 	return (
 		<main className="flex flex-col md:flex-row h-screen w-screen font-sans">
 			{selections.map((selection, index) => (
-				<div
+				<a
+					href={selection.link}
 					key={index}
-					className={`group relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${selection.bgColor} ${
-						index === 0
+					className={`group relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${selection.bgColor} ${index === 0
 							? "border-b-2 md:border-b-0 md:border-r-2 border-gray-800"
 							: "" // Darker border for better contrast
-					}`}
+						}`}
 					onClick={() => handleSelection(selection.title)}
 				>
 					<div
 						className="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-40 group-hover:scale-110"
 						style={{ backgroundImage: `url(${selection.imageUrl})` }}
 						aria-hidden="true"
-					></div>
-					<div className="absolute inset-0 w-full h-full bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+					>
+					</div>
+					<div className="absolute inset-0 w-full h-full bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+					</div>
 					<div className="relative text-center p-4 transition-transform duration-500 ease-out transform group-hover:scale-105">
 						<h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-wider">
 							{selection.title}
@@ -52,7 +54,7 @@ export default function App() {
 							{selection.description}
 						</p>
 					</div>
-				</div>
+				</a>
 			))}
 		</main>
 	);
