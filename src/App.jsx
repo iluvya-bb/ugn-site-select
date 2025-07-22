@@ -8,6 +8,7 @@ export default function App() {
 				"https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2732&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			alt: "Students in a lecture hall for video courses",
 			bgColor: "bg-blue-700", // Solid blue background
+			link: "https://edustream.buteekhui.com",
 		},
 		{
 			title: "EduShop",
@@ -17,6 +18,7 @@ export default function App() {
 				"https://images.unsplash.com/photo-1519406596751-0a3ccc4937fe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			alt: "Modern school furniture in a classroom",
 			bgColor: "bg-orange-700", // Solid orange background
+			link: "https://edushop.buteekhui.com",
 		},
 	];
 
@@ -29,10 +31,11 @@ export default function App() {
 			{selections.map((selection, index) => (
 				<div
 					key={index}
-					className={`group relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${selection.bgColor} ${index === 0
-						? "border-b-2 md:border-b-0 md:border-r-2 border-gray-800"
-						: "" // Darker border for better contrast
-						}`}
+					className={`group relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${selection.bgColor} ${
+						index === 0
+							? "border-b-2 md:border-b-0 md:border-r-2 border-gray-800"
+							: "" // Darker border for better contrast
+					}`}
 					onClick={() => handleSelection(selection.title)}
 				>
 					<div
